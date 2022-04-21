@@ -127,8 +127,7 @@
 .slider {
   width: 100%;
   &__inner {
-  }
-  &__item {
+    margin-bottom: 30px;
   }
   &__image {
     width: 100%;
@@ -137,6 +136,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
+    border-radius: 10px;
   }
   .slick-arrow {
     position: absolute;
@@ -172,18 +172,92 @@
     color: $aqua;
     transition: 0.3s;
     background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.7);
     border-radius: 50%;
     border: 3px solid $aqua;
   }
   .lnr-chevron-left:hover::before {
     color: $aqua;
     transition: 0.3s;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.7);
     border-radius: 50%;
     border: 3px solid $aqua;
   }
 }
+
 // end slider
+
+// start offer
+
+.offer {
+  &__inner {
+    margin-bottom: 20px;
+  }
+  .title {
+    text-align: center;
+    font-size: 40px;
+    @include f500;
+    margin-bottom: 10px;
+  }
+  &__text {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  &__items {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__item {
+    width: 370px;
+    text-align: center;
+    box-shadow: 0px 0px 20px 0px rgb(0 0 0 / 10%);
+    padding: 30px 20px;
+    border-radius: 10px;
+    cursor: default;
+    &-icon {
+      font-size: 70px;
+    }
+    &-title {
+      margin: 20px;
+      font-size: 30px;
+      font-weight: 500;
+    }
+    &-text {
+      margin-bottom: 20px;
+    }
+    &-btn {
+      border: 2px solid $aqua;
+      padding: 10px 25px;
+      color: #fff;
+      border-radius: 30px;
+      cursor: pointer;
+      background-color: $aqua;
+    }
+  }
+  &__item:hover {
+    background-color: $aqua;
+    transition: 0.3s;
+    .offer__item-icon {
+      color: #fff;
+    }
+    .offer__item-title {
+      color: #fff;
+    }
+    .offer__item-text {
+      color: #fff;
+    }
+    .offer__item-btn {
+      border: 2px solid #fff;
+    }
+    .offer__item-btn:hover {
+      background-color: #fff;
+      color: $aqua;
+      transition: 0.3s;
+    }
+  }
+}
+
+// end offer
 
 // media
 @import "_media.scss";
