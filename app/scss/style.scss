@@ -3,13 +3,12 @@
 @import "_fonts.scss";
 
 // start header
-
 .header {
   &__inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 0;
+    padding: 20px 0 30px;
   }
   &__logo {
     font-size: 30px;
@@ -119,15 +118,13 @@
     }
   }
 }
-
 // end header
 
 // start slider
-
 .slider {
   width: 100%;
   &__inner {
-    margin-bottom: 30px;
+    margin-bottom: 60px;
   }
   &__image {
     width: 100%;
@@ -184,20 +181,12 @@
     border: 3px solid $aqua;
   }
 }
-
 // end slider
 
 // start offer
-
 .offer {
   &__inner {
-    margin-bottom: 20px;
-  }
-  .title {
-    text-align: center;
-    font-size: 40px;
-    @include f500;
-    margin-bottom: 10px;
+    margin-bottom: 60px;
   }
   &__text {
     text-align: center;
@@ -256,8 +245,113 @@
     }
   }
 }
-
+.title {
+  text-align: center;
+  font-size: 40px;
+  @include f500;
+  margin-bottom: 10px;
+}
 // end offer
+
+// start examples
+.examples {
+  &__inner {
+    margin-bottom: 60px;
+  }
+  &__title {
+    margin-bottom: 20px;
+  }
+  &__gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-gap: 20px;
+  }
+  &__item {
+    position: relative;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    height: 150px;
+    transition: all 0.5s;
+    &::before {
+      content: "";
+      background-color: rgba($color: #000000, $alpha: 0);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      border-radius: 10px;
+    }
+
+    &:hover::before {
+      content: "";
+      background-color: rgba($color: #000000, $alpha: 0.5);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      border-radius: 10px;
+      transition: all 0.3s;
+    }
+    &:hover {
+      transform: scale(1.05);
+      transition: all 0.5s;
+      .examples__review {
+        display: block;
+      }
+      .examples__review:hover {
+        border: 2px solid $aqua;
+        background-color: #fff;
+        color: $aqua;
+      }
+    }
+  }
+  &__review {
+    position: absolute;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    padding: 10px 20px;
+    color: #fff;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    letter-spacing: 1px;
+    display: none;
+    transition: all 0.3s;
+  }
+  &__item:nth-child(1) {
+    grid-column: span 2;
+    grid-row: span 2;
+    height: 100%;
+  }
+  &__item:nth-child(2) {
+    grid-column: span 3;
+    grid-row: span 2;
+    height: 100%;
+  }
+  &__item:nth-child(3) {
+    grid-column: span 2;
+    grid-row: span 2;
+    height: 100%;
+  }
+  &__item:nth-child(5) {
+    grid-column: span 2;
+    grid-row: span 2;
+    height: 100%;
+  }
+  &__item:nth-child(7) {
+    grid-column: span 3;
+    grid-row: span 2;
+    height: 100%;
+  }
+  &__item:nth-child(8) {
+    grid-column: span 2;
+    grid-row: span 2;
+    height: 100%;
+  }
+}
+// end examples
 
 // media
 @import "_media.scss";
