@@ -188,10 +188,6 @@
   &__inner {
     margin-bottom: 60px;
   }
-  &__text {
-    text-align: center;
-    margin-bottom: 30px;
-  }
   &__items {
     display: flex;
     justify-content: space-between;
@@ -250,6 +246,11 @@
   font-size: 40px;
   @include f500;
   margin-bottom: 10px;
+}
+.text {
+  text-align: center;
+  margin: 0 auto 30px;
+  width: 600px;
 }
 // end offer
 
@@ -390,11 +391,10 @@
     margin-bottom: 60px;
   }
   &__title {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   &__text {
-    text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
   &__slider {
     text-align: center;
@@ -445,7 +445,7 @@
       align-items: center;
       position: absolute;
       left: -120px;
-      top: 264px;
+      top: 265px;
       background-color: rgba($color: $aqua, $alpha: 0.7);
       padding: 5px 8px;
       border-radius: 0 10px 10px 0;
@@ -453,10 +453,12 @@
       a::before {
         font-size: 25px;
         color: #000;
+        transition: all 0.3s;
       }
       a:hover::before {
         font-size: 25px;
         color: #fff;
+        transition: all 0.3s;
       }
       a + a {
         margin-left: 8px;
@@ -506,6 +508,91 @@
   }
 }
 // end specialists
+
+// start plan
+.plan {
+  &__inner {
+    margin-bottom: 60px;
+  }
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .plan__item:nth-child(1)::before {
+      content: "01";
+    }
+    .plan__item:nth-child(2)::before {
+      content: "02";
+    }
+    .plan__item:nth-child(3)::before {
+      content: "03";
+    }
+    .plan__item:nth-child(4)::before {
+      content: "04";
+    }
+    .plan__item:nth-child(5)::before {
+      content: "05";
+    }
+    .plan__item:nth-child(6)::before {
+      content: "06";
+    }
+    .plan__item:nth-child(7)::before {
+      content: "07";
+    }
+    .plan__item:nth-child(8)::before {
+      content: "08";
+    }
+    .plan__item::before {
+      position: absolute;
+      font-size: 25px;
+      left: 7px;
+      top: 7px;
+      padding: 5px;
+      font-family: "Roboto", sans-serif;
+      font-weight: 700;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      transition: all 0.2s;
+    }
+    .plan__item:nth-child(n + 1):nth-child(-n + 6) {
+      margin-bottom: 30px;
+    }
+  }
+  &__item {
+    position: relative;
+    max-width: 570px;
+    width: 100%;
+    background-color: $aqua;
+    padding: 30px;
+    text-align: center;
+    border-radius: 20px;
+    color: #fff;
+    border: 2px solid #fff;
+    transition: all 0.5s;
+    &:hover {
+      background-color: #fff;
+      border: 2px solid $aqua;
+      color: $aqua;
+    }
+    &:hover::before {
+      border: 2px solid $aqua;
+      color: $aqua;
+    }
+    &-icon {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+    &-title {
+      font-size: 21px;
+      margin-bottom: 8px;
+      @include f700;
+    }
+    &-text {
+      @include f300;
+    }
+  }
+}
+// end plan
 
 // media
 @import "_media.scss";
