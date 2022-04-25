@@ -23,6 +23,21 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-map-marker:before {
+  content: "\f041";
+}
+.icon-twitter-square:before {
+  content: "\f081";
+}
+.icon-linkedin-square:before {
+  content: "\f08c";
+}
+.icon-phone:before {
+  content: "\f095";
+}
+.icon-envelope:before {
+  content: "\f0e0";
+}
 .icon-facebook-square:before {
   content: "\f082";
 }
