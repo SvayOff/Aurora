@@ -823,7 +823,7 @@
 
 // start footer
 .footer {
-  background-color: rgba($aqua, 1);
+  background-color: $aqua;
   &__inner {
     display: flex;
     justify-content: space-between;
@@ -832,6 +832,7 @@
   &__col {
     color: #fff;
     width: 25%;
+    cursor: default;
     & + & {
       margin-left: 30px;
     }
@@ -933,8 +934,14 @@
       padding: 8px 9px;
       font-size: 20px;
       color: #fff;
+      transition: all 0.5s;
       & + & {
         margin-left: 15px;
+      }
+      &:hover {
+        background-color: #fff;
+        color: $aqua;
+        transform: rotateZ(360deg);
       }
     }
   }
